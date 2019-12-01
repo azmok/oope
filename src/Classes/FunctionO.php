@@ -8,6 +8,8 @@ use OOPe\Traits\ObjectT;
 
 use function Autil\_, Autil\type, Autil\call, Autil\apply, Autil\bind, Autil\curry, Autil\concat, Autil\splitNamespaces;
 
+
+
 /*--------------------
    FunctionO
 ----------------------
@@ -21,16 +23,21 @@ use function Autil\_, Autil\type, Autil\call, Autil\apply, Autil\bind, Autil\cur
 
    _Function::curry
 
-**/
+---------------------*/
+
+
+
 class FunctionO{
+
    use ObjectT;
   
+
    private $_value;
    private $_length;
    private $_name;
    
 
-   ## __construct
+   
    function __construct($fn, $currying=false){
       $this->_length = (new \ReflectionFunction($fn))->getNumberOfParameters();
       
@@ -41,6 +48,10 @@ class FunctionO{
       }
       $this->_name = (new \ReflectionFunction($fn))->getName()  ."\0";
    }
+   
+
+   
+
    
    ## magic __invoke
    function __invoke(...$args){

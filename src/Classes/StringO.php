@@ -11,6 +11,8 @@ use OOPe\Classes\ArrayO;
 
 use function Autil\_, Autil\length, Autil\type, Autil\toCamelCase, Autil\toSnakeCase, Autil\concat, Autil\trim, Autil\replace, Autil\repeat, Autil\includes, Autil\match, Autil\indexOf, Autil\inject, Autil\escape, Autil\escapeD, Autil\joinWith;
 
+
+
 /*--------------  <<class>>  ----------------
                    StringO
 ---------------------------------------------
@@ -42,12 +44,17 @@ use function Autil\_, Autil\length, Autil\type, Autil\toCamelCase, Autil\toSnake
    + inspect( <Str>, <Str> ) : <IO>
 ----------------------------------------------*/
 
+
+
 class StringO implements \Iterator, \ArrayAccess{
    
    use ObjectT;
    
+   
    private $_value = "";
    private $_length = 0;
+   
+
    
    /**
     *
@@ -58,6 +65,10 @@ class StringO implements \Iterator, \ArrayAccess{
       $this->_container = str_split( $this->_value );
       
    }
+   
+
+   
+
    
    /**
     *

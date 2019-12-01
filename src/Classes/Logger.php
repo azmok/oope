@@ -7,16 +7,36 @@ namespace OOPe\Classes;
 use function Autil\_, Autil\indexOf, Autil\concat, Autil\isAssoc, Autil\isArray, Autil\_forEach, Autil\head, Autil\contain, Autil\pretty, Autil\append, Autil\prettify, Autil\match, Autil\type;
 
 
-### wrapper logger class
+
+
+/*--------------------
+        Logger
+  (wrapper logging class)
+----------------------
+
+----------------------
+
+
+--------------------*/
+
+
+
 class Logger{
+
    private $_obj;
    private $_info = [];
+   
+
    
    function __construct($obj, $notify=true){
       $this->_obj = $obj;
       $this->log();
       $this->_notify = $notify;
    }
+   
+
+   
+
    
    function __call($name, $args){
       # @param
@@ -63,29 +83,6 @@ class Logger{
       return $this->_obj;
    }
 }
-
-
-/*
-$str = new StringO("this");
-$str = new Logger($str);
-
-$str->concat("Woo");
-/*-----  output  ------
-[Caller]: "concat"
-[Args]:
-  (Woo)
-[CurrentVal]: thisWoo
-/*--------------------*
-$str->trim();
-/*-----  output  ------
-[Caller]: 'trim'
-[Args]:
-  ()
-[CurrentVal]: thisWoo
-/*--------------------*/
-
-
-/**/
 
 
 

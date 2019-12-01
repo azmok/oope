@@ -19,14 +19,24 @@ use function Autil\_, Autil\indexOf, Autil\concat, Autil\isAssoc, Autil\isArray,
 
 /*---------------*/
 
+
+
 class NumberO{
+
    use ObjectT;
    
+   
    private $_value = 0;
+   
+
    
    function __construct($val){
       $this->_value = $val;
    }
+   
+   
+
+   
    
    function __toString(){
       return (string) $this->valueOf(); // Number, String, Regex

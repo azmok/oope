@@ -18,7 +18,6 @@ Autil\inject, Autil\render;
 
 
 
-
 /*-------------------------
     assocArrayO
 ---------------------------
@@ -39,18 +38,22 @@ Autil\inject, Autil\render;
 /*-------------------------*/
 
 
+
 class AssocArrayO implements \ArrayAccess, \Iterator{
    
    use ObjectT;
    use ArrayT;
    
+
    private $_value;
    private $_length = 0;
    private $_cursor = 0;
    private $_keysArr = [];
-   #####  readOnly prop #####
-   # public **$length;
    
+
+   
+   
+
    function __construct($assoc, $flags=0){
       # 
       if( $assoc === null || empty($assoc) ){

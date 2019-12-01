@@ -29,23 +29,25 @@ use function Autil\_, Autil\filter, Autil\concat, Autil\joinWith, Autil\match, A
 -----------------------------------*/
 
 class RegExpO{
+
    use ObjectT;
 
+   
    private $_value = "";
    private $_pattern = "";
    private $_flags = [];
    
-   /***
-   * set instance's property
-   * 
-   * @param
-   *    String $str : regex string
-   */
+   
+   
    function __construct($str){
       $this->_value = $str;
       $this->_pattern = self::getRegex($str);
       $this->_flags = self::getFlags($str);
    }
+   
+
+   
+
    
    /***
    * Return string of regex

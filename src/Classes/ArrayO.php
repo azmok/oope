@@ -4,11 +4,11 @@ namespace OOPe\Classes;
 
 
 
-//require_once $_SERVER['DOCUMENT_ROOT']  ."/__init__.php";
-
 use OOPe\Traits\ObjectT, OOPe\Traits\ArrayT;
 
 use function Autil\_, Autil\pretty, Autil\isArray, Autil\object2String;
+
+
 
 /*--------------
    ArrayO
@@ -43,15 +43,19 @@ use function Autil\_, Autil\pretty, Autil\isArray, Autil\object2String;
 ------------------*/
 
 
+
 class ArrayO extends \ArrayIterator{
    
    use ObjectT;
    use ArrayT;
    
+   
    private $_value = [];
    private $_length = 0;
-   #####  readOnly prop #####
-   # public **$length;
+   
+
+   
+
    
    function __construct($val=[], $flags=0){
       # type check of $val

@@ -1,7 +1,7 @@
 <?php
 
 
-require_once __DIR__  ."/autoload_test.php";
+require_once $_SERVER['DOCUMENT_ROOT']  ."/vendor/autoload.php";
 
 use function Autil\_, Autil\type, Autil\getOrCreateDOMDoc, Autil\unescape;
 use OOPe\Classes\DOMDoc, OOPe\Classes\DOMElm;
@@ -16,27 +16,31 @@ DOC;
 
 
 $doc = getOrCreateDOMDoc();
+$body = $doc->body;
 
+_( $body );
 $doc->create("h1")
+   ->appendTo($body)
    ->text("This is DOC, DOMElm class demo")
-   ->attr("class", "alert alert-info")
-   ->appendTo('body'); /**/
+   ->attr("class", "alert alert-info");
 
 $doc->create("DIV")
+   ->appendTo($body)
    ->text($str1)
-   ->attr("class", "container text-center")
-   ->appendTo('body'); /**/
+   ->attr("class", "container text-center");
 
 $doc->create("DIV")
+   ->appendTo($body)
    ->text("　")
-   ->attr("class", "container text-center")
-   ->appendTo('body'); /**/
+   ->attr("class", "container text-center");
 
 $doc->create("DIV")
+   ->appendTo($body)
    ->text($str1)
-   ->attr("class", "container text-center")
-   ->appendTo('body'); /**/
+   ->attr("class", "container text-center");
 
+   
+/**/
 $doc->render();
 
 

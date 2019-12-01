@@ -16,9 +16,6 @@ _( $arr );
 
 
 
-
-
-
 /*
 
 
@@ -82,10 +79,7 @@ pretty( $arr->getMethods() ); /*
 [8]: setFlags
 [9]: asort
 [10]: ksort
-[11]: uasort
-[12]: uksort
-[13]: natsort
-[14]: natcasesort
+[11]:  
 [15]: unserialize
 [16]: serialize
 [17]: rewind

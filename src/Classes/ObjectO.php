@@ -38,6 +38,10 @@ class ObjectO{
       }
    }
    
+
+   
+
+   
    function  __toString(){
       return object2String($this); // Array, AssocArray, ObjectO
       //return (string) $this->valueOf(); // Number, Sting, Regex

@@ -17,6 +17,7 @@ use function Autil\_, Autil\pretty, Autil\isArray, Autil\object2String;
    - <Integer> length
    - <Integer> cursor
 ----------------
+   <<ObjectT>>
    <<ArrayT>>
    
    + append() : <Obj>

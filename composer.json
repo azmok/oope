@@ -6,7 +6,12 @@
          "OOPe\\": "src"
       }
    },
-   
+   "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/azmok/autil"
+        }
+    ],
    "require": {
       "azmok/autil": "*"
    }

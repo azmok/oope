@@ -8,6 +8,6 @@
    },
    
    "require": {
-      "azmok/autil": "*" 
+      "azmok/autil": "*"
    }
 }

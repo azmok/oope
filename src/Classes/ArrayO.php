@@ -4,7 +4,7 @@ namespace OOPe\Classes;
 
 
 
-use OOPe\Traits\ObjectT, OOPe\Traits\ArrayT;
+use OOPe\Traits\ArrayT;
 
 use function Autil\_, Autil\pretty, Autil\isArray, Autil\object2String;
 

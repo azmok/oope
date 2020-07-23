@@ -50,8 +50,8 @@ class StringO implements \Iterator, \ArrayAccess{
    
    use ObjectT;
    
-   
-   private $_value = "";
+
+
    private $_length = 0;
    
 
@@ -340,9 +340,9 @@ class StringO implements \Iterator, \ArrayAccess{
 
     
 
-    function __toString(){
-      return $this->valueOf(); // Number, String, Regex
-   }
+   //  function __toString(){
+   //    return $this->valueOf(); // Number, String, Regex
+   // }
 }
 
 /*

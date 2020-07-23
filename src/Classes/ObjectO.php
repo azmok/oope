@@ -3,7 +3,7 @@
 namespace OOPe\Classes;
 
 
-use function Autil\isAssoc, Autil\object2String;
+use function Autil\type, Autil\isAssoc, Autil\object2String;
 
 use OOPe\Traits\ObjectT;
 
@@ -54,7 +54,7 @@ class ObjectO{
             return type($this);
             
          default:
-            throw Exception("not implemented '__toAtring()' in this type object" )
+            throw Exception("not implemented '__toAtring()' in this type object" );
       }
    }
    function toString(){

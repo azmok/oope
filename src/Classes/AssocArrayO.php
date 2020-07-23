@@ -4,8 +4,7 @@ namespace OOPe\Classes;
 
 
 
-use OOPe\Traits\ObjectT, OOPe\Traits\ArrayT;
-use OOPe\Classes\NullO;
+use OOPe\Traits\AssocArrayT;
 
 
 use function Autil\_, Autil\type, Autil\prettify, Autil\pretty, Autil\isAssoc, Autil\isArray, Autil\length,
@@ -42,11 +41,15 @@ Autil\inject, Autil\render;
 
 
 
-class AssocArrayO {
+class AssocArrayO implements \ArrayAccess, \Iterator {
    
    use AssocArrayT;
    
    
+   private $_cursor = 0;
+   private $_keysArr = [];
+
+
    
    function __construct($assoc, $flags=0){
       # 
@@ -105,7 +108,72 @@ class AssocArrayO {
          }
       }
    }
+
    
+   
+   /*--------------  <<ArrayAccess>>  --------------------
+      - <Array> _container
+      ----------------------------------------------------
+      + offsetExists ( mixed $offset ) : bool
+      + offsetGet ( mixed $offset ) : mixed
+      + offsetSet ( mixed $offset , mixed $value ) : void
+      + offsetUnset ( mixed $offset ) : void
+   /*----------------------------------------------------*/
+   function offsetExists($offset){
+      _("in offsetExists");
+   }
+   function offsetGet($offset){
+      //_( "in offsetGet");
+      return $this->_value[$offset];
+   }
+   function offsetSet($offset ,$value){
+      //_( "in offsetSet" );
+      $this->_value[$offset] = $value;
+   }
+   function offsetUnset($offset){
+      _( "unset");
+   }
+   
+   
+   
+   /*******  <<Iterator>>  *****
+      current ( void ) : mixed
+      key ( void ) : scalar
+      next ( void ) : void
+      rewind ( void ) : void
+      valid ( void ) : bool
+   /****************************/
+   function current() {
+      //_( "in current()" ); 
+      $key = $this->_keysArr[$this->_cursor];
+      $val = $this->_value[$key];
+      
+      return $val;
+   }
+   function key(){
+      //_( "in key()" ); 
+      $key = $this->_keysArr[$this->_cursor];
+      //_("key",  $key );
+      return $key;
+   }
+   function next(){
+      //_( "in next()" ); 
+      $this->_cursor += 1;
+   }
+   function rewind(){
+      //_( "in rewind()" ); 
+      $this->_cursor = 0;
+   }
+   function valid(){
+      //_( "in valid()" ); 
+      return $this->_cursor  <  $this->_length;
+   }
+   
+   function  __toString(){
+      return object2String($this); // Array, AssocArray, 
+      //return (string) $this->valueOf(); // Number, Sting, Regex
+      //return type($this); // Function, DOMDoc, DOMElm, 
+   }
 }
 
 

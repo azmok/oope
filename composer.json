@@ -8,8 +8,8 @@
    },
    "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/azmok/autil"
+            "type": "path",
+            "url": "C:/Users/Azuma/github/azmok/autil"
         }
     ],
    "require": {

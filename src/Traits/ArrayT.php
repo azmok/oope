@@ -26,9 +26,12 @@ use function Autil\_, Autil\isAssoc, Autil\_forEach, Autil\isArray, Autil\head, 
 ------------------*/
 Trait ArrayT{
    
-   /** 
-    *
-    */
+   use ObjectT;
+   
+   
+   
+   private $_length = 0;
+   
    
    
    /** 

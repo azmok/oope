@@ -23,6 +23,10 @@ use function Autil\_, Autil\type, Autil\toString, Autil\match, Autil\filter, Aut
 
 trait ObjectT{
    
+   private $_value;
+   
+   
+   
    function valueOf(){
       return $this->_value;
    }

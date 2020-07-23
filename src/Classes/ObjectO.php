@@ -43,9 +43,22 @@ class ObjectO{
 
    
    function  __toString(){
-      return object2String($this); // Array, AssocArray, ObjectO
-      //return (string) $this->valueOf(); // Number, Sting, Regex
-      //return type($this); // Function, DOMDoc, DOMElm, 
+      switch( type($this) ){
+         case "Array" || "AssocArray" ||  "ObjectO":
+            return object2String($this);
+            
+         case "Number" || "Sting" ||  "Regex":
+            return (string) $this->valueOf();
+            
+         case "Function" || "DOMDoc" ||  "DOMElm":
+            return type($this);
+            
+         default:
+            throw Exception("not implemented '__toAtring()' in this type object" )
+      }
+   }
+   function toString(){
+      $this->__toString();
    }
    
 }

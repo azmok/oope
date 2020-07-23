@@ -47,14 +47,7 @@ use function Autil\_, Autil\pretty, Autil\isArray, Autil\object2String;
 
 class ArrayO extends \ArrayIterator{
    
-   use ObjectT;
    use ArrayT;
-   
-   
-   private $_value = [];
-   private $_length = 0;
-   
-
    
 
    
@@ -74,15 +67,6 @@ class ArrayO extends \ArrayIterator{
          throw new \Exception("Invalid type of arguments in ArrayO");
       }
    }
-   
-
-   function  __toString(){
-      return object2String($this); // Array, AssocArray, 
-      //return (string) $this->valueOf(); // Number, Sting, Regex
-      //return type($this); // Function, DOMDoc, DOMElm, 
-   }
-   
-   
    
 }
 

@@ -6,13 +6,13 @@
          "OOPe\\": "src"
       }
    },
-   "repositories": [
-        {
-            "type": "path",
-            "url": "C:/Users/Azuma/github/azmok/autil"
-        }
-    ],
    "require": {
       "azmok/autil": "*"
-   }
+   },
+   "repositories": [
+      {
+         "type": "vcs",
+         "url": "https://github.com/azmok/autil.git"
+      }
+   ]
 }

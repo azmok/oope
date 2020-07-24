@@ -12,7 +12,7 @@
    "repositories": [
       {
          "type": "vcs",
-         "url": "https://github.com/azmok/autil.git"
+         "url": "https://github.com/azmok/autil"
       }
    ]
 }

@@ -7,7 +7,7 @@
       }
    },
    "require": {
-      "azmok/autil": "*"
+      "azmok/autil": "dev-master"
    },
    "repositories": [
       {

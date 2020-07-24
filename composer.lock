@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93f9744e366d6298b386a430820fb01f",
+    "content-hash": "e12c80023f9f7998cc0ab96c5b91e4c2",
     "packages": [
         {
             "name": "azmok/autil",
-            "version": "1.0.0",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/azmok/autil.git",
+                "reference": "a8bcf98dc9476ce1ababfc54165d71dec8804a98"
+            },
             "dist": {
-                "type": "path",
-                "url": "C:/Users/Azuma/github/azmok/autil",
-                "reference": "0eec6355a5ab5650c1d47df58eb7811f3d85a478"
+                "type": "zip",
+                "url": "https://api.github.com/repos/azmok/autil/zipball/a8bcf98dc9476ce1ababfc54165d71dec8804a98",
+                "reference": "a8bcf98dc9476ce1ababfc54165d71dec8804a98",
+                "shasum": ""
             },
             "require": {
                 "azmok/oope": "*"
@@ -20,18 +26,25 @@
             "type": "library",
             "autoload": {
                 "files": [
-                    "core.php",
-                    "html.php",
-                    "file.php",
-                    "classHelper.php"
+                    "src/core.php",
+                    "src/html.php",
+                    "src/file.php",
+                    "src/classHelper.php"
                 ]
-            }
+            },
+            "support": {
+                "source": "https://github.com/azmok/autil/tree/master",
+                "issues": "https://github.com/azmok/autil/issues"
+            },
+            "time": "2020-07-24T09:08:29+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "azmok/autil": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

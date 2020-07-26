@@ -47,6 +47,7 @@ class FunctionO{
          $this->_value = $fn;
       }
       $this->_name = (new \ReflectionFunction($fn))->getName()  ."\0";
+      //_( $this->_name );
    }
    
 
@@ -55,7 +56,16 @@ class FunctionO{
    
    ## magic __invoke
    function __invoke(...$args){
-      return ($this->_value)( ...$args );
+      $fn = $this->_value; 
+      return $fn( ...$args );
+      /******
+         Anonymous fn need to be assign to variable to invoke, directory invokation thorw 
+         Syntax Error.
+         
+         ####  ex.error ####
+         return ($this->_value)(...$args);
+         
+       ****/
    }
    
    ## name
@@ -87,28 +97,7 @@ class FunctionO{
    
 
    
-   
+   function __toString(){
+      return type($this->_value);
+   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

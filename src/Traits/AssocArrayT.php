@@ -4,7 +4,8 @@ namespace OOPe\Traits;
 
 
 
-use function Autil\_, Autil\isAssoc, Autil\_forEach, Autil\isArray, Autil\head, Autil\append, Autil\prepend,  Autil\merge, Autil\concat, Autil\joinWith, Autil\every;
+use function Autil\_;
+use OOPe\Traits\ArrayT;
 
 
 /*--------------
@@ -15,9 +16,46 @@ use function Autil\_, Autil\isAssoc, Autil\_forEach, Autil\isArray, Autil\head, 
 ----------------
    
 ------------------*/
-Trait AssocArrayT {
+trait AssocArrayT {
    
-   use ObjectT;
-   use ArrayT;
+   use ArrayT{
+      //self::contain insteadof ArrayT; //### doen't work
+      ArrayT::contain as _contain;
+   }
    
+   /** 
+    * predicateFn whether specified property($str) is exists
+    * 
+    * @return boolean
+    * @param string $str 
+    *        assocarray $asoc 
+    **/
+   function contain($str){
+      $assoc = $this->_value;
+      
+      if( empty($assoc) ){
+         return;
+      } else {
+         $res = null;
+         
+         foreach($assoc as $key=>$val){
+            if( strpos($str, $key) !== false || strpos($str, $val) !== false ){
+               $res = true;
+            }
+         }
+         return $res;
+      }
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

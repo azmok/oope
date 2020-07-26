@@ -169,36 +169,5 @@ class AssocArrayO implements \ArrayAccess, \Iterator {
       return $this->_cursor  <  $this->_length;
    }
    
-   function  __toString(){
-      return object2String($this); // Array, AssocArray, 
-      //return (string) $this->valueOf(); // Number, Sting, Regex
-      //return type($this); // Function, DOMDoc, DOMElm, 
-   }
+   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

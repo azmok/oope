@@ -1,9 +1,12 @@
 <?php
 
-require_once "../vendor/autoload.php";
+require_once dirname( dirname( dirname(__DIR__))) ."/autoload.php";
 
 use function Autil\_, Autil\type, Autil\pretty;
 use OOPe\Classes\AssocArrayO;
+
+
+
 
 
 
@@ -12,14 +15,13 @@ $assoc = [
    "name" => "Goku",
    "id" => "001",
 ];
-
-
-
-
 $arr = new AssocArrayO( $assoc );
 _( $arr->name ); // Goku
+_( $arr->contain("name") );
 
 
+
+/*
 
 $arr->foo = "foo";
 _( $arr->foo ); // foo
@@ -37,7 +39,7 @@ foreach( $arr as $key=>$val){
 /******
 name :: Goku
 id :: 001
-********/
+********
 
 _( $arr );
 

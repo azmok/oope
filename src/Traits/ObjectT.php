@@ -113,25 +113,26 @@ trait ObjectT{
          return $this;
       }
    }
-
-    
-
-    
-
-    
-
-   
    
    function  __toString(){
-      switch( type($this) ){
-         case "Array" || "AssocArray" || "ObjectO":
-            return object2String($this);
-         case "Number" || "Sting" || "Regex":
-            return (string) $this->valueOf();
-         case "Function" || "DOMDoc" || "DOMElm":
-            return type($this);
-         default:
-            throw new Exception("not implemented '__toString()' method in this object type");
+      //_( type($this) );
+      if(
+       type($this) === "[object ArrayO]" ||
+       type($this) ===  "[object AssocArrayO]" ||
+       type($this) ===  "[object ObjectO]" ){
+         return object2String($this);
+      } elseif (
+       type($this) === "[object NumberO]" ||
+       type($this) === "[object StringO]" ||
+       type($this) === "[object RegexO]" ){
+         return (string) $this->valueOf();
+      } elseif (
+       type($this) === "[object FunctionO]" ||
+       type($this) ===  "[object DOMDoc]" ||
+       type($this) ===  "[object DOMElm]" ){
+         return type($this);
+      } else {
+         throw new \Exception("not implemented '__toString()' method in this object type");
       }      
    }
 }

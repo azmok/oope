@@ -24,7 +24,7 @@ use function Autil\_, Autil\isAssoc, Autil\_forEach, Autil\isArray, Autil\head, 
    + filter ( <Fn> ) : <Arr>
    + reduce ( <Fn> ) : <Mixed>
 ------------------*/
-Trait ArrayT{
+trait ArrayT{
    
    use ObjectT;
    
@@ -69,6 +69,35 @@ Trait ArrayT{
    function concat(...$arr){
       return new self( concat($this->valueOf(), ...$arr) );
    }
+   
+   
+   
+   
+   /** 
+    * predicateFn whether specified property is exists
+    * 
+    * @return boolean
+    * @param string $str 
+    *        assocarray $asoc 
+    */
+   function contain($str){
+      _( "ArrayT's contain()" );
+      $arr = $this->_value;
+      
+      if( empty($arr) ){
+         return;
+      } else {
+         $filtered = map(function($curr) use ($arr){
+            if( $curr === $str ){
+               return $curr;
+            }
+         }, $arr);
+         return $filtered ?: false;
+      }
+   }
+   
+   
+   
    
    /**
     *
@@ -154,24 +183,3 @@ Trait ArrayT{
    }
    /************************/
 }
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   

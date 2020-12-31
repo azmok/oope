@@ -1,6 +1,6 @@
 {
    "name": "azmok/oope",
-   "version": "1.0.0",
+   "version": "*",
    "autoload": {
       "psr-4": {
          "OOPe\\": "src"

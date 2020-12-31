@@ -11,8 +11,8 @@
    },
    "repositories": [
       {
-         "type": "path",
-         "url": "C:/Users/Azuma/github/azmok/autil"
+         "type": "svc",
+         "url": "https://github.com/azmok/autil"
       }
    ]
 }

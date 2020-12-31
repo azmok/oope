@@ -11,7 +11,7 @@
    },
    "repositories": [
       {
-         "type": "svc",
+         "type": "vcs",
          "url": "https://github.com/azmok/autil"
       }
    ]
